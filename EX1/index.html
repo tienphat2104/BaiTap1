@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> F-pattern</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="header">
+            <header>PET CAT</header>
+        </div>
+        <section class="container">
+           <div class="head">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="#about">Giới Thiệu</a>
+                    <a href="#breeds">Giống Mèo</a>
+                    <a href="#gallery">Thư Viện</a>
+                    <a href="#contact">Liên Hệ</a>
+                </nav>
+            </div>
+           </div>
+            <div class="content">
+                <article id="about" class="hidden">
+                    <h2>Chào mừng đến với Thế Giới Của Những Người Yêu Mèo!</h2>
+                    <p>Trang Giới Thiệu là nơi bạn sẽ khám phá về thế giới động vật kỳ diệu của chúng ta. <br>
+                       Chúng ta sẽ tìm hiểu về nguồn gốc và lịch sử của mèo, cũng như những đặc điểm và tính cách độc đáo mà chúng mang lại. <br>
+                       Hãy cùng nhau đắm chìm trong thế giới tuyệt vời của những người bạn bốn chân này.</p>
+
+                    <img src="img/Ảnh mèo.jpg" alt="">
+                </article>
+        
+                <article id="breeds" class="hidden">
+                    <h2>Đa Dạng Và Đẹp Đẽ: Các Giống Mèo Trên Thế Giới</h2>
+                    <p>Trang Giống Mèo sẽ giới thiệu về các giống mèo phổ biến và độc đáo trên khắp thế giới. <br>
+                       Bạn sẽ được biết đến về các đặc điểm ngoại hình, tính cách, và câu chuyện lịch sử của từng giống. <br>
+                       Hãy khám phá sự đa dạng tuyệt vời của thế giới mèo.</p>
+                        <div class="img-meo">
+                            <img src="img/G.meo1.jpg" alt="Mèo Angora">
+                            <img src="img/G.meo2.jpg" alt="Mèo LaPerm">
+                            <img src="img/G.meo3.jpg" alt="Mèo Somali">
+                        </div>
+                </article>
+        
+                <article id="gallery" class="hidden">
+                    <h2>Thư Viện Mèo Tuyệt Vời</h2>
+                    <p>Trang Thư Viện là nơi bạn có thể thưởng thức những bức ảnh đẹp như tranh của mèo từ cộng đồng yêu mèo. <br>
+                       Bạn sẽ được ngắm nhìn những khoảnh khắc dễ thương, hài hước, và đôi khi là bí ẩn của những chú mèo dễ thương. <br>
+                       Hãy để tâm hồn bạn được thư giãn với bộ sưu tập hình ảnh này.</p>
+                </article>
+        
+                <article id="contact" class="hidden">
+                    <h2>Liên Lạc Với Chúng Tôi</h2>
+                    <p>Trang Liên Hệ là nơi bạn có thể chia sẻ ý kiến, đề xuất, và nếu có bất kỳ câu hỏi nào, hãy liên hệ trực tiếp với chúng tôi. <br>
+                       Chúng tôi luôn mở đón nhận định và hợp tác từ cộng đồng yêu mèo. Đừng ngần ngại chia sẻ tình yêu của bạn với chúng tôi!</p>
+                </article>
+            </div>
+            <div class="btn">
+                <button>Start learning today</button>
+                <button>Sleeping, would to start tomorrow</button>
+            </div>
+        </section>
+        <script>
+             // Chức năng chuyển trang khi click vào menu
+        document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        // Ẩn tất cả các articles
+        document.querySelectorAll('article').forEach(article => {
+            article.classList.add('hidden');
+        });
+
+        // Hiển thị article được chọn
+        targetElement.classList.remove('hidden');
+        
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
+    });
+});
+        </script>
+    </body>
+</html>
