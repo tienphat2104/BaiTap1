@@ -87,12 +87,6 @@ img{
     font-family: 'Times New Roman';
     border-radius: 20px;
 }
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 2em;
-}
 
 article {
     flex: 1;
@@ -109,8 +103,7 @@ nav a {
 }
 
 nav a:hover {
-   background: #e78229;
-   height: 50px;
+   text-decoration: underline;
 }
 
 .hidden {
